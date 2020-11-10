@@ -1,7 +1,4 @@
-import Head from 'next/head'
 
-export default function Home() {
-  return (
     <div>
       <Head>
         <title>John Ruane Portfolio</title>
@@ -16,5 +13,3 @@ export default function Home() {
 
       </footer>
     </div>
-  )
-}
