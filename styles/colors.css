@@ -1,0 +1,30 @@
+:root {
+  --base-font-color: #000000;
+  /* simplybe international */
+  --sbe-color-1: #c3d1d9;
+  --sbe-color-2: #e1dee9;
+  --sbe-color-3: #c4d1d9;
+  --sbe-banner-color: #ffe4e4;
+  --sbe-banner-text-color: #232323;
+
+  /* simplybe */
+  --dal-color-1: #dedde2;
+  --dal-color-2: #d3e3ea;
+  --dal-color-3: #efe496;
+  --dal-banner-color: #272727;
+  --dal-banner-text-color: #ffffff;
+
+  /* jacamo */
+  --cgn-color-1: #abc9dd;
+  --cgn-color-2: #e1dde9;
+  --cgn-color-3: #bcd8aa;
+  --cgn-banner-color: #e8e8e8;
+  --cgn-banner-text-color: #1d1d1d;
+
+  /* jdwilliams */
+  --jdw-color-1: #dedde2;
+  --jdw-color-2: #eaeaea;
+  --jdw-color-3: #d2e3ea;
+  --jdw-banner-color: #fffef1;
+  --jdw-banner-text-color: #1d1d1d;
+}

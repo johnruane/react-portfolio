@@ -1,0 +1,44 @@
+:root {
+  /* margins, gaps, columns */
+  --m: 1rem;
+  --g: 1rem;
+  --c: 1fr;
+  /* columns */
+  --columns-320: 6;
+  --columns-768: 12;
+  --columns-1024: 18;
+  /* grid areas */
+  --grid-template-areas-320: "m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 m2";
+  --grid-template-areas-768: "m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 g6 c7 g7 c8 g8 c9 g9 c10 g10 c11 g11 c12 m2";
+  --grid-template-areas-1024: "m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 g6 c7 g7 c8 g8 c9 g9 c10 g10 c11 g11 c12 g12 c13 g13 c14 g14 c15 g15 c16 g16 c17 g17 c18 m2";
+  /* grid */
+  --grid-template-columns: var(--m)
+    repeat(calc(var(--column-count) - 1), var(--c) var(--g)) var(--c) var(--m);
+}
+
+@media screen {
+  :root {
+    --column-count: var(--columns-320);
+    --grid-template-areas: var(--grid-template-areas-320);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --column-count: var(--columns-768);
+    --grid-template-areas: var(--grid-template-areas-768);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --column-count: var(--columns-1024);
+    --grid-template-areas: var(--grid-template-areas-1024);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: var(--grid-template-columns);
+  grid-template-areas: var(--grid-template-areas);
+}
