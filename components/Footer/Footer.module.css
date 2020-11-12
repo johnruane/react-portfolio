@@ -1,0 +1,10 @@
+.footer {
+  margin-bottom: 2rem;
+  grid-column: m1-end / m2-start;
+}
+
+.footerLink {
+  grid-column: m1-end / m2-start;
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+}

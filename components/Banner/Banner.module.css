@@ -1,0 +1,70 @@
+.dateText {
+  font-size: var(--font-size-small-print);
+  line-height: var(--line-height-small-print);
+  grid-column: 1;
+  align-self: end;
+}
+
+.text {
+  font-weight: bold;
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body-large);
+  grid-column: 1;
+}
+
+.subText {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  grid-column: 1;
+}
+
+.bannerWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 184px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bannerTextWrapper {
+  display: grid;
+  grid-column-gap: 1rem;
+  padding: 0 1rem;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+  grid-template-rows: 1fr auto 1fr;
+}
+
+.simplyBeInternational {
+  background-image: url("/images/simplybe-international.jpg");
+  background-position: right;
+  background-color: #d3d7d6;
+}
+
+.simplyBe {
+  background-image: url("/images/simplybe.jpg");
+  background-position: left;
+  background-color: #f7eae4;
+}
+
+.simplyBe .bannerTextWrapper {
+  grid-column: 2;
+}
+
+.jacamo {
+  background-image: url("/images/jacamo.jpg");
+  background-position: right;
+  background-color: #a6bac1;
+}
+
+.jdwilliams {
+  background-image: url("/images/jdwilliams.jpg");
+  background-position: left;
+  background-color: #f4efe9;
+}
+
+.jdwilliams .bannerTextWrapper {
+  grid-column: 2;
+}

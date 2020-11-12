@@ -1,0 +1,28 @@
+.displayHeading {
+  grid-column: m1-end / m2-start;
+  font-family: "Pacifico", sans-serif;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+  margin-bottom: 0.5rem;
+}
+
+.displayHeadingSubText {
+  grid-column: m1-end / g3-end;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  margin-bottom: 4rem;
+}
+
+.bannerContainer {
+  grid-column: m1-start / m2-end;
+  margin-bottom: 6rem;
+}
+
+.profileTextWrapper {
+  grid-column: c3-start / m2-start;
+  margin-bottom: 6rem;
+}
+
+.profileImage {
+  grid-column: m1-end / c2-end;
+}

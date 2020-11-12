@@ -55,6 +55,7 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
+  width: 100%;
   max-width: 100%;
   display: block;
 }
@@ -77,4 +78,9 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+p {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }

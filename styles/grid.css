@@ -41,4 +41,5 @@
   display: grid;
   grid-template-columns: var(--grid-template-columns);
   grid-template-areas: var(--grid-template-areas);
+  margin-top: 2rem;
 }

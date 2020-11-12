@@ -1,0 +1,9 @@
+.header {
+  grid-column: m1 / m2-start;
+  justify-self: end;
+  margin-bottom: 3rem;
+}
+
+.headerTextEmphasis {
+  font-weight: bold;
+}
