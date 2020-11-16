@@ -17,18 +17,3 @@
   grid-column: m1-start / m2-end;
   margin-bottom: 6rem;
 }
-
-.profileText {
-  max-width: 55ch;
-}
-
-.profileTextWrapper {
-  grid-column: c3-start / m2-start;
-  margin-bottom: 6rem;
-}
-
-.profileImage {
-  grid-column: m1-end / c2-end;
-  justify-self: end;
-  max-width: 110px;
-}

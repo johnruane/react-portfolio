@@ -2,7 +2,9 @@ import Head from 'next/head'
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Footer from '../components/Footer';
-import styles from '../styles/Home.module.css'
+import About from '../components/About';
+import Divider from '../components/Divider';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -24,13 +26,8 @@ export default function Home() {
           <Banner additionlClasses="jacamo" dateText="June 2013" text="Jacamo" subText="Mobile" color="93AAB5"/>
           <Banner additionlClasses="jdwilliams" dateText="June 2010" text="JDWilliams" subText="Desktop" color="F7F2EE"/>
         </div>
-        <img className={styles.profileImage} src="/images/profile.png"/>
-        <div className={styles.profileTextWrapper}>
-          <p className={styles.profileText}>Hi. I'm John Ruane and I am a frontend developer currently working at N Brown Group in Manchester.</p>
-          <br/>
-          <p className={styles.profileText}>I have 5+ years experience designing and building UI, and coding with Javascript. Most recently I am 
-            developing with React and a number of other technologies such as Node, Redux, Typescript, Jest & REST APIs.</p>
-        </div>
+        <Divider/>
+        <About/>
         <Footer/>
       </div>
     </div>

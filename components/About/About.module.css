@@ -1,0 +1,27 @@
+.aboutWrapper {
+  grid-column: m1-end / m2-start;
+}
+
+.aboutImage {
+  grid-column: m1-end / g4-end;
+  justify-self: end;
+  margin-bottom: 4rem;
+}
+
+.aboutHeading {
+  font-weight: bold;
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body-large);
+  grid-column: m1-end / m2-start;
+  margin-bottom: 1.5rem;
+}
+
+.aboutText {
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+}
+
+.aboutTextWrapper {
+  grid-column: g1-start / m2-start;
+  margin-bottom: 6rem;
+}
