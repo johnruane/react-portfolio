@@ -4,6 +4,6 @@
   flex-direction: column;
   justify-content: center;
   transform: rotate(180deg);
-  margin-bottom: 6rem;
+  margin-bottom: 12rem;
   grid-gap: 4px;
 }

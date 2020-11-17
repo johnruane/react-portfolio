@@ -1,3 +1,6 @@
-import Banner from './Banner';
+import { Banner, BannerContainer } from './Banner';
 
-export default Banner;
+export {
+  Banner,
+  BannerContainer
+};

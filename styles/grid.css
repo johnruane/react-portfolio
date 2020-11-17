@@ -14,12 +14,15 @@
   /* grid */
   --grid-template-columns: var(--m)
     repeat(calc(var(--column-count) - 1), var(--c) var(--g)) var(--c) var(--m);
+  --grid-width-sm: 375px;
+  --grid-width-md: 768px;
 }
 
 @media screen {
   :root {
     --column-count: var(--columns-320);
     --grid-template-areas: var(--grid-template-areas-320);
+    --grid-width: var(--grid-width-sm);
   }
 }
 
@@ -27,6 +30,7 @@
   :root {
     --column-count: var(--columns-768);
     --grid-template-areas: var(--grid-template-areas-768);
+    --grid-width: var(--grid-width-md);
   }
 }
 
@@ -34,6 +38,7 @@
   :root {
     --column-count: var(--columns-1024);
     --grid-template-areas: var(--grid-template-areas-1024);
+    --grid-width: var(--grid-width-lg);
   }
 }
 
@@ -41,5 +46,6 @@
   display: grid;
   grid-template-columns: var(--grid-template-columns);
   grid-template-areas: var(--grid-template-areas);
-  margin-top: 2rem;
+  margin: 2rem auto;
+  max-width: var(--grid-width);
 }

@@ -1,9 +1,18 @@
 import React from 'react';
 import styles from './Banner.module.css';
 
+const BannerContainer = ({
+  children,
+}) => {
+  return (
+    <div className={styles.bannerContainer}>
+      {children}
+    </div>
+  )
+}
+
 const Banner = ({
   additionlClasses,
-  color,
   dateText,
   text,
   subText,
@@ -19,4 +28,7 @@ const Banner = ({
   )
 }
 
-export default Banner;
+export {
+  Banner,
+  BannerContainer
+};

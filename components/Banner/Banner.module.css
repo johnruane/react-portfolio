@@ -18,53 +18,55 @@
   grid-column: 1;
 }
 
+.bannerContainer {
+  grid-column: m1-start / m2-end;
+  margin: 0 0 12rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .bannerContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+    margin: 1rem 1rem 12rem;
+  }
+}
+
 .bannerWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: start;
   height: 184px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: right;
+  margin-bottom: 1rem;
 }
 
 .bannerTextWrapper {
   display: grid;
+  margin: 0.5rem 1rem;
   grid-column-gap: 1rem;
-  padding: 0 1rem;
-  justify-items: center;
-  text-align: center;
   align-items: center;
   grid-template-rows: 1fr auto 1fr;
 }
 
 .simplyBeInternational {
   background-image: url("/images/simplybe-international.png");
-  background-position: right;
   background-color: #d3d7d6;
 }
 
 .simplyBe {
   background-image: url("/images/simplybe.png");
-  background-position: left;
   background-color: #f7eae4;
-}
-
-.simplyBe .bannerTextWrapper {
-  grid-column: 2;
 }
 
 .jacamo {
   background-image: url("/images/jacamo.png");
-  background-position: right;
   background-color: #a6bac1;
 }
 
 .jdwilliams {
   background-image: url("/images/jdwilliams.png");
-  background-position: left;
   background-color: #f4efe9;
-}
-
-.jdwilliams .bannerTextWrapper {
-  grid-column: 2;
 }

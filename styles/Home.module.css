@@ -7,13 +7,8 @@
 }
 
 .displayHeadingSubText {
-  grid-column: m1-end / g3-end;
+  grid-column: m1-end / c4-end;
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   margin-bottom: 4rem;
-}
-
-.bannerContainer {
-  grid-column: m1-start / m2-end;
-  margin-bottom: 6rem;
 }
