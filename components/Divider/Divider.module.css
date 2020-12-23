@@ -1,9 +1,0 @@
-.divider {
-  grid-column: m1-end / m2-start;
-  display: grid;
-  flex-direction: column;
-  justify-content: center;
-  transform: rotate(180deg);
-  margin-bottom: 12rem;
-  grid-gap: 4px;
-}

@@ -22,7 +22,6 @@
   :root {
     --column-count: var(--columns-320);
     --grid-template-areas: var(--grid-template-areas-320);
-    --grid-width: var(--grid-width-sm);
   }
 }
 
