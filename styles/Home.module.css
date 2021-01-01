@@ -1,8 +1,6 @@
 .salutationWrapper {
-  height: calc(100vh - var(--header-height));
-  background-color: var(--background-color-1);
-  align-content: center;
-  padding-bottom: var(--header-height);
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .salutationText {
@@ -11,14 +9,6 @@
   font-size: var(--font-size-display);
   line-height: var(--line-height-display);
   margin-bottom: 0.5rem;
-  grid-column: m1-end / m2-start;
-  grid-row: 1;
-}
-
-.salutationSubText {
-  max-width: 12rem;
-  grid-column: m1-end / m2-start;
-  grid-row: 2;
 }
 
 .galleryWrapper {

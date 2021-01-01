@@ -5,12 +5,15 @@ import style from './Layout.module.css';
 
 const Layout = ({
   children,
-  additionalClass
+  coverSlot
 }) => {
   return (
     <>
-      <div className={`grid ${style.headerWrapper}`}>
-        <Header/>
+      <div className={`grid ${style.coverSlotWrapper}`}>
+        <Header />
+        <div className={style.coverSlot}>
+          {coverSlot}
+        </div>
       </div>
       <main>
         {children}

@@ -1,8 +1,14 @@
-.headerWrapper {
-  grid-column: m1 / m2-start;
-  justify-self: end;
-  padding: 3rem 0 3rem;
+.coverSlotWrapper {
+  height: 100vh;
+  grid-template-rows: min-content auto;
   background-color: var(--background-color-1);
+}
+
+.coverSlot {
+  grid-column: m1-end / m2-start;
+  grid-row: 2;
+  align-self: center;
+  padding-bottom: var(--header-height);
 }
 
 .footerWrapper {

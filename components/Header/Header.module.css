@@ -1,7 +1,9 @@
 .headerText {
-  grid-column: m1 / m2-start;
-  justify-self: end;
+  grid-column: m1-end / m2-start;
   letter-spacing: 0.5rem;
+  padding: 3rem 0 3rem;
+  width: 100%;
+  text-align: end;
 }
 
 .headerTextEmphasis {
