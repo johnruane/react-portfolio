@@ -1,0 +1,67 @@
+.salutationWrapper {
+  height: calc(100vh - var(--header-height));
+  background-color: var(--background-color-1);
+  align-content: center;
+  padding-bottom: var(--header-height);
+}
+
+.salutationText {
+  font-family: "Noto", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+  margin-bottom: 0.5rem;
+  grid-column: m1-end / m2-start;
+  grid-row: 1;
+}
+
+.salutationSubText {
+  max-width: 12rem;
+  grid-column: m1-end / m2-start;
+  grid-row: 2;
+}
+
+.galleryWrapper {
+  background-color: var(--background-color-2);
+  padding: var(--spacing-1) 0 var(--spacing-1);
+}
+
+.galleryHeading {
+  grid-column: m1-end / m2-start;
+  color: var(--font-color-2);
+}
+
+.gallerySubHeading {
+  grid-column: m1-end / m2-start;
+  color: var(--font-color-2);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.galleryPreviewsWrapper {
+  grid-column: m1-end / m2-start;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.galleryPreviewImage {
+  height: auto;
+}
+
+.aboutHeading {
+  grid-column: m1-end / m2-start;
+  margin-bottom: 1rem;
+}
+
+.aboutImage {
+  margin: var(--spacing-1) 0 var(--spacing-1);
+  grid-column: m1 / g4-end;
+}
+
+.aboutText {
+  grid-column: g1-start / m2-start;
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  margin-bottom: var(--spacing-1);
+}

@@ -1,5 +1,11 @@
 :root {
-  --base-font-color: #000000;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --font-color-1: var(--color-black);
+  --font-color-2: var(--color-white);
+  --background-color-1: #f0f8ff;
+  --background-color-2: #212121;
+
   /* simplybe international */
   --sbe-color-1: #c3d1d9;
   --sbe-color-2: #e1dee9;

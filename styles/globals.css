@@ -1,6 +1,7 @@
 @import "./grid.css";
 @import "./typography.css";
 @import "./colors.css";
+@import "./utils.css";
 
 /* Box sizing rules */
 *,
@@ -41,6 +42,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   font-family: "Karla", sans-serif;
+  line-height: var(--line-height-body);
 }
 
 /* A elements that don't have a class get default styles */

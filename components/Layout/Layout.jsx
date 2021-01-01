@@ -4,17 +4,20 @@ import Footer from '../Footer';
 import style from './Layout.module.css';
 
 const Layout = ({
-  children
+  children,
+  additionalClass
 }) => {
   return (
     <>
-      <div className={`grid ${style.layoutHeader}`}>
+      <div className={`grid ${style.headerWrapper}`}>
         <Header/>
       </div>
       <main>
         {children}
       </main>
-      <Footer/> 
+      <div className={`grid ${style.footerWrapper}`}>
+        <Footer/>         
+      </div>
     </>
   )
 }

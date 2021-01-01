@@ -1,10 +1,6 @@
-.header {
+.headerText {
   grid-column: m1 / m2-start;
   justify-self: end;
-  margin-bottom: 3rem;
-}
-
-.headerText {
   letter-spacing: 0.5rem;
 }
 

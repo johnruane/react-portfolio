@@ -1,5 +1,10 @@
-.layoutHeader {
+.headerWrapper {
   grid-column: m1 / m2-start;
   justify-self: end;
-  margin-bottom: 3rem;
+  padding: 3rem 0 3rem;
+  background-color: var(--background-color-1);
+}
+
+.footerWrapper {
+  background-color: var(--background-color-2);
 }
