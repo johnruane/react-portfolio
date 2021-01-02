@@ -9,7 +9,7 @@ const Layout = ({
 }) => {
   return (
     <>
-      <div className={`grid ${style.coverSlotWrapper}`}>
+      <div className={`grid ${style.coverSlotContent}`}>
         <Header />
         <div className={style.coverSlot}>
           {coverSlot}

@@ -21,7 +21,7 @@ export default function Home() {
           </article>
         }
       >
-        <article className={`grid ${style.galleryWrapper}`}>
+        <article className={`grid ${style.galleryContent}`}>
           <h2 className={style.galleryHeading}>It's a work thing</h2>
           <h3 className={style.gallerySubHeading}>Case studies</h3>
           <div className={style.galleryPreviewsWrapper}>

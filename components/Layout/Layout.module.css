@@ -1,4 +1,4 @@
-.coverSlotWrapper {
+.coverSlotContent {
   height: 100vh;
   grid-template-rows: min-content auto;
   background-color: var(--background-color-1);

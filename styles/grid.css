@@ -45,5 +45,4 @@
   display: grid;
   grid-template-columns: var(--grid-template-columns);
   grid-template-areas: var(--grid-template-areas);
-  max-width: var(--grid-width);
 }
