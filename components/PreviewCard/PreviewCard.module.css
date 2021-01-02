@@ -8,7 +8,6 @@
   left: 0;
   right: 0;
   display: grid;
-  grid-template-rows: auto auto 1fr;
   justify-content: center;
   align-content: center;
   height: 100%;
@@ -26,6 +25,7 @@
 .subHeading {
   color: var(--font-color-2);
   text-align: center;
+  font-weight: bold;
 }
 
 .text {
@@ -33,4 +33,7 @@
   line-height: var(--line-height-body-small);
   color: var(--font-color-2);
   text-align: center;
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
 }

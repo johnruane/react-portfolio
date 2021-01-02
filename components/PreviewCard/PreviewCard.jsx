@@ -13,8 +13,8 @@ const PreviewCard = ({
       <div className={style.textWrapper}>
         <div className={style.heading}>{heading}</div>
         <div className={style.subHeading}>{subHeading}</div>
-        <div className={style.text}>{text}</div>
       </div>
+      <div className={style.text}>{text}</div>
     </article>
   )
 }
