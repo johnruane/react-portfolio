@@ -1,4 +1,12 @@
 :root {
   --header-height: 7rem;
   --spacing-1: 6rem;
+  --spacing-2: 12rem;
+  --vertical-spacing: var(--spacing-1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --vertical-spacing: var(--spacing-2);
+  }
 }

@@ -1,21 +1,36 @@
 :root {
+  /* container width */
+  --grid-width-320: 100vw;
+  --grid-width-414: 414px;
+  --grid-width-667: 667px;
+  --grid-width-768: 768px;
+  --grid-width-1024: 1024px;
+  --grid-width-1366: 1366px;
+  --grid-width-1440: 1440px;
+  --grid-width-1680: 1680px;
+
   /* margins, gaps, columns */
-  --m: 1rem;
+  --m: 2rem;
   --g: 1rem;
   --c: 1fr;
+  --grid-width: var(--grid-width-320);
+  --excess-width: calc(100vw - var(--grid-width));
+
   /* columns */
   --columns-320: 6;
   --columns-768: 12;
   --columns-1024: 18;
+
   /* grid areas */
-  --grid-template-areas-320: "m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 m2";
-  --grid-template-areas-768: "m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 g6 c7 g7 c8 g8 c9 g9 c10 g10 c11 g11 c12 m2";
-  --grid-template-areas-1024: "m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 g6 c7 g7 c8 g8 c9 g9 c10 g10 c11 g11 c12 g12 c13 g13 c14 g14 c15 g15 c16 g16 c17 g17 c18 m2";
+  --grid-template-areas-320: "fm1 m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 m2 fm2";
+  --grid-template-areas-768: "fm1 m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 g6 c7 g7 c8 g8 c9 g9 c10 g10 c11 g11 c12 m2 fm2";
+  --grid-template-areas-1024: "fm1 m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 g6 c7 g7 c8 g8 c9 g9 c10 g10 c11 g11 c12 g12 c13 g13 c14 g14 c15 g15 c16 g16 c17 g17 c18 m2 fm2";
+
   /* grid */
-  --grid-template-columns: var(--m)
-    repeat(calc(var(--column-count) - 1), var(--c) var(--g)) var(--c) var(--m);
-  --grid-width-sm: 375px;
-  --grid-width-md: 768px;
+  --fm: calc(var(--excess-width) / 2);
+  --grid-template-columns: var(--fm) var(--m)
+    repeat(calc(var(--column-count) - 1), var(--c) var(--g)) var(--c) var(--m)
+    var(--fm);
 }
 
 @media screen {
@@ -29,7 +44,7 @@
   :root {
     --column-count: var(--columns-768);
     --grid-template-areas: var(--grid-template-areas-768);
-    --grid-width: var(--grid-width-md);
+    --grid-width: var(--grid-width-768);
   }
 }
 
@@ -37,7 +52,15 @@
   :root {
     --column-count: var(--columns-1024);
     --grid-template-areas: var(--grid-template-areas-1024);
-    --grid-width: var(--grid-width-lg);
+    --grid-width: var(--grid-width-1024);
+  }
+}
+
+@media (min-width: 1336px) {
+  :root {
+    --column-count: var(--columns-1024);
+    --grid-template-areas: var(--grid-template-areas-1024);
+    --grid-width: var(--grid-width-1366);
   }
 }
 
