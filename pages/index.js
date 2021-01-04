@@ -3,14 +3,11 @@ import Layout from '../components/Layout';
 import PreviewCard from '../components/PreviewCard';
 import style from '../styles/Home.module.css'
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Karla|Noto"></link>
+        <title>John Ruane Portfolio</title>
       </Head>
 
       <Layout
@@ -66,3 +63,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
