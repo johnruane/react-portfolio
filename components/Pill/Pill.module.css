@@ -1,0 +1,17 @@
+.pillWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pillWrapper :last-child {
+  margin-right: 0;
+}
+
+.pill {
+  background: var(--pill-background-color);
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0 0.5rem;
+  font-size: var(--font-size-print);
+  line-height: var(--line-height-print);
+  color: var(--font-color-2);
+}

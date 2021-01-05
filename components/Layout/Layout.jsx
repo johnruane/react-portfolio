@@ -5,7 +5,7 @@ import style from './Layout.module.css';
 
 const Layout = ({
   children,
-  coverSlot
+  coverSlot,
 }) => {
   return (
     <>

@@ -1,6 +1,8 @@
 .salutationWrapper {
   display: grid;
   grid-template-columns: 1fr;
+  grid-row: 2;
+  align-self: baseline;
 }
 
 .salutationText {
