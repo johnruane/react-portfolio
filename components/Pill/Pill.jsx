@@ -8,7 +8,7 @@ const Pill = ({
   return (
     <div className={style.pillWrapper}>
       {itemsArray.map((text) => (
-        <span className={style.pill}>{text}</span>
+        <span key={text} className={style.pill}>{text}</span>
       ))}
     </div>
   )

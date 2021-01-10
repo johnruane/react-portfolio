@@ -23,24 +23,28 @@ const Home = () => {
           <h3 className={style.gallerySubHeading}>Case studies</h3>
           <div className={style.galleryPreviewsWrapper}>
             <PreviewCard
+              href="/article/simplybeint"
               imgSrc="/images/simplybe-international-preview.png"
               heading="SimplyBe Int'l"
               subHeading="Responsive"
               text="2015"
             />
             <PreviewCard
+              href="/article/simplybe"
               imgSrc="/images/simplybe-preview.png"
               heading="SimplyBe"
               subHeading="Tablet"
               text="2013"
             />
             <PreviewCard
+              href="/article/jacamo"
               imgSrc="/images/jacamo-preview.png"
               heading="Jacamo"
               subHeading="Mobile"
               text="2013"
             />
             <PreviewCard
+              href="/article/jdwilliams"
               imgSrc="/images/jdwilliams-preview.png"
               heading="JD Williams"
               subHeading="Desktop"

@@ -1,0 +1,10 @@
+.articleBlock {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin: var(--spacing-2) 0;
+}
+
+.articleBlock > * {
+  margin: 0;
+}

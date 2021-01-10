@@ -6,10 +6,11 @@ const PreviewCard = ({
   imgSrc,
   heading,
   subHeading,
-  text
+  text,
+  href,
 }) => {
   return (
-    <Link href="/article"> 
+    <Link href={href}> 
       <article className={style.galleryPreview}>     
           <img className={style.galleryPreviewImage} src={imgSrc} />
           <div className={style.textWrapper}>
