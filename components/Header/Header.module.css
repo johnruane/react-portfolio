@@ -1,3 +1,7 @@
+.header {
+  background-color: var(--background-color-1);
+}
+
 .headerText {
   grid-column: m1-end / m2-start;
   letter-spacing: 0.5rem;

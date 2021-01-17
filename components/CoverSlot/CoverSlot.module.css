@@ -1,0 +1,18 @@
+.coverSlotContent {
+  height: calc(100vh - var(--header-height));
+  background-color: var(--background-color-1);
+}
+
+.coverSlot {
+  grid-column: m1-end / m2-start;
+  align-self: center;
+  padding-bottom: var(--header-height);
+}
+
+.salutationText {
+  font-family: "Noto", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+  margin-bottom: 0.5rem;
+}

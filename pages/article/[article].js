@@ -1,4 +1,4 @@
-import Layout from "../../components/Layout";
+import DefaultLayout from "../../layouts/DefaultLayout";
 import Pill from "../../components/Pill";
 import TextBanner from "../../components/TextBanner";
 import ArticleText from "../../components/ArticleText";
@@ -12,7 +12,7 @@ const ArticlePage = ({ data, data2 }) => {
   const content = data2.items[0].fields;
 
   return (
-    <Layout
+    <DefaultLayout
       className="articleCoverSlot"
       coverSlot={
         <>
@@ -30,7 +30,7 @@ const ArticlePage = ({ data, data2 }) => {
         </>
       }
     >
-      <ArticleText title="Intro" text={title} />
+      <ArticleText title="Intro" text={content.intro} />
       <img
         className={style.articleImage}
         src="https://via.placeholder.com/750x548.png"
@@ -38,19 +38,25 @@ const ArticlePage = ({ data, data2 }) => {
       <TextBanner text="“Shared codebase across all devices on the Hybris Commerce platform." />
       <ArticleBlock>
         {body.map((content) => {
-          return <ArticleText title={content.heading} text={content.text} />;
+          return (
+            <ArticleText
+              key={content.heading}
+              title={content.heading}
+              text={content.text}
+            />
+          );
         })}
       </ArticleBlock>
       <img
         className={style.articleImage}
         src="https://via.placeholder.com/750x548.png"
       />
-    </Layout>
+    </DefaultLayout>
   );
 };
 
 export const getServerSideProps = async ({ query }) => {
-  const pageText = data[query.page];
+  const pageText = data[query.article];
   const res = await fetch(
     `${process.env.CONTENTFUL_URL}/spaces/${process.env.CONTENTFUL_SPACE_ID}/entries?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`
   );
