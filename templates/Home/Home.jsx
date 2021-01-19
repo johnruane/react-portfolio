@@ -4,6 +4,7 @@ import style from './Home.module.css';
 
 const Home = ({ articles }) => {
   console.log(articles)
+  const { previewImage } = articles;
   return (
     <div>
       <CoverSlot></CoverSlot>
@@ -14,7 +15,7 @@ const Home = ({ articles }) => {
           {articles.map(article => (
             <PreviewCard
               href="/article/simplybeint"
-              imgSrc="/images/simplybe-international-preview.png"
+              imgSrc={article.previewImage.fields.file.url}
               heading={article.heading}
               subHeading={article.subHeading}
               text={article.released}
