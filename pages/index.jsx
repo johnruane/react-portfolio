@@ -1,11 +1,11 @@
 import DefaultLayout from "../layouts/DefaultLayout";
 import Template from "../templates/Home";
-import { fetchEntries } from "../utils/contentful";
+import { fetchByContentType } from "../utils/contentful";
 
-const Home = ({ articles }) => {
+const Home = ({ articles, aboutMe }) => {
   return (
     <DefaultLayout>
-      <Template articles={articles}></Template>
+      <Template articles={articles} aboutMe={aboutMe}></Template>
     </DefaultLayout>
   );
 };
@@ -13,13 +13,34 @@ const Home = ({ articles }) => {
 export default Home;
 
 export const getServerSideProps = async ({ query }) => {
-  const res = await fetchEntries();
-  const articles = await res.map((p) => {
-    return p.fields;
+  const aboutResponse = await fetchByContentType('aboutMe');
+  const articlesResponse = await fetchByContentType('postType1');
+
+  const about = await aboutResponse.map((p) => {
+    return {
+      heading: p.heading,
+      body: p.body,
+      src: p.image.fields.file.url,
+    }
   });
+
+  console.log(articlesResponse)
+
+  const articles = await articlesResponse.map((p) => {
+    return {
+      slug: p.slug,
+      src: p.previewImage.fields.file.url,
+      heading: p.heading,
+      subHeading: p.subHeading,
+      released: p.released,
+      dateStamp: p.dateStamp,
+    };
+  });
+
   return {
     props: {
-      articles,
+      aboutMe: about[0],
+      articles: articles
     },
   };
 };

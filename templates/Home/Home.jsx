@@ -1,10 +1,15 @@
 import CoverSlot from '../../components/CoverSlot';
 import PreviewCard from '../../components/PreviewCard';
 import style from './Home.module.css';
+import { convertContentfulString } from '../../utils/stringUtils';
 
-const Home = ({ articles }) => {
-  console.log(articles)
-  const { previewImage } = articles;
+const Home = ({ articles, aboutMe }) => {
+  const sortedArticles = articles.sort((a,b) => {
+    const aDate = new Date(a.dateStamp);
+    const bDate = new Date(b.dateStamp);
+    return bDate - aDate;
+  });
+
   return (
     <div>
       <CoverSlot></CoverSlot>
@@ -12,10 +17,10 @@ const Home = ({ articles }) => {
         <h2 className={style.galleryHeading}>It's a work thing</h2>
         <h3 className={style.gallerySubHeading}>Case studies</h3>
         <div className={style.galleryPreviewsWrapper}>
-          {articles.map(article => (
+          {sortedArticles.map(article => (
             <PreviewCard
-              href="/article/simplybeint"
-              imgSrc={article.previewImage.fields.file.url}
+              href={`articles/${article.slug}`}
+              imgSrc={article.src}
               heading={article.heading}
               subHeading={article.subHeading}
               text={article.released}
@@ -26,29 +31,12 @@ const Home = ({ articles }) => {
 
       <article className={`grid ${style.aboutContent}`}>
         <div className={style.aboutImageWrapper}>
-          <img className={style.aboutImage} src="/images/profile.png" />
+          <img className={style.aboutImage} src={aboutMe.src}/>
         </div>
-        <h2 className={style.aboutHeading}>A bit about me</h2>
-        <p className={style.aboutText}>
-          I am a frontend developer working at N Brown Group in Manchester and
-          have 10+ years designing and building user interfaces for the web,
-          specifically for ecommerce. Web accessibility and performance are at
-          the forefront of every project I work on - delivering an amazing
-          experience to all customer across all devices.
-          <br />
-          <br />
-          Most recently I have moved away from UI design into a more full stack
-          development role - CI/CD, integration testing & docker. I have been
-          developing frontends with React and a number of other technologies
-          such as Node, Redux, Typescript, Jest & REST APIs.
-          <br />
-          <br />
-          Through the purpose of what and who our ecommerce websites are for I
-          have built up strong skills in web accessibility and performance.
-          <br />
-          <br />I have a BSc honors degree in Computing from Manchester
-          Metropolitan University.
-        </p>
+        <h2 className={style.aboutHeading}>{aboutMe.heading}</h2>
+        <div className={style.aboutText}>
+            {convertContentfulString(aboutMe.body)}
+        </div>
       </article>
     </div>
   );

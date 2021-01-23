@@ -11,6 +11,6 @@
     "contentful": "^8.1.7",
     "next": "10.0.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
   }
 }
