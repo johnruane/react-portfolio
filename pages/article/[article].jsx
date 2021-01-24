@@ -5,6 +5,7 @@ import ArticleText from "../../components/ArticleText";
 import ArticleBlock from "../../components/ArticleBlock";
 import style from "../../styles/Article.module.css";
 import data from "../../data/articles.json";
+import { fetchHeader } from '../../utils/contentful';
 
 const ArticlePage = ({ data, data2 }) => {
   const title = data.intro;
@@ -58,7 +59,7 @@ const ArticlePage = ({ data, data2 }) => {
 export const getServerSideProps = async ({ query }) => {
   const pageText = data[query.article];
   const res = await fetch(
-    `${process.env.CONTENTFUL_URL}/spaces/${process.env.CONTENTFUL_SPACE_ID}/entries?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`
+    `${process.env.CONTENTFUL_URL}/spaces/${process.env.CONTENTFUL_SPACE_ID}/entries/${query}?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`
   );
   const data2 = await res.json();
   return {

@@ -3,16 +3,16 @@ import Link from 'next/link';
 import style from './PreviewCard.module.css';
 
 const PreviewCard = ({
-  imgSrc,
+  src,
   heading,
   subHeading,
   text,
-  href,
+  href
 }) => {
   return (
     <Link href={href}> 
-      <article className={style.galleryPreview}>     
-          <img className={style.galleryPreviewImage} src={imgSrc} />
+      <article className={style.galleryPreview}> 
+          <img className={style.galleryPreviewImage} src={src} />
           <div className={style.textWrapper}>
             <div className={style.heading}>{heading}</div>
             <div className={style.subHeading}>{subHeading}</div>

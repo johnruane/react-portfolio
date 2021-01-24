@@ -3,12 +3,12 @@ import PreviewCard from '../../components/PreviewCard';
 import style from './Home.module.css';
 import { convertContentfulString } from '../../utils/stringUtils';
 
-const Home = ({ articles, aboutMe }) => {
-  const sortedArticles = articles.sort((a,b) => {
-    const aDate = new Date(a.dateStamp);
-    const bDate = new Date(b.dateStamp);
-    return bDate - aDate;
+const Home = ({ previews, aboutMe }) => {
+  const sortedPreviews = previews.sort((a,b) => {
+    return parseInt(b.released) - parseInt(a.released);
   });
+
+  console.log(sortedPreviews);
 
   return (
     <div>
@@ -17,13 +17,13 @@ const Home = ({ articles, aboutMe }) => {
         <h2 className={style.galleryHeading}>It's a work thing</h2>
         <h3 className={style.gallerySubHeading}>Case studies</h3>
         <div className={style.galleryPreviewsWrapper}>
-          {sortedArticles.map(article => (
+          {sortedPreviews.map(preview => (
             <PreviewCard
-              href={`articles/${article.slug}`}
-              imgSrc={article.src}
-              heading={article.heading}
-              subHeading={article.subHeading}
-              text={article.released}
+              href={`articles/${preview.link}`}
+              src={preview.src}
+              heading={preview.heading}
+              subHeading={preview.subHeading}
+              text={preview.released}
             />
           ))}
         </div>
