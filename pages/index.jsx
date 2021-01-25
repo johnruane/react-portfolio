@@ -1,23 +1,5 @@
-import fetch from 'isomorphic-fetch';
 import DefaultLayout from "../layouts/DefaultLayout";
 import Template from "../templates/Home";
-import { fetchByContentType } from "../utils/contentful";
-
-const gql = `
-{
-  previewCollection {
-    items {
-      heading
-      subHeading
-      released
-      link {
-        sys {
-          id
-        }
-      }
-    }
-  }
-}`
 
 const Home = ({ previews, aboutMe }) => {
   return (
@@ -29,41 +11,28 @@ const Home = ({ previews, aboutMe }) => {
 
 export default Home;
 
-export const getServerSideProps = async ({ query }) => {
-  const aboutResponse = await fetchByContentType('aboutMe');
-  // const articlesResponse = await fetchByContentType('preview');
-
-  const about = await aboutResponse.map((p) => {
-    return {
-      heading: p.heading,
-      body: p.body,
-      src: p.image.fields.file.url,
-    }
-  });
-
-  // const articles = await articlesResponse.map((p) => {
-  //   return {
-  //     src: p.image.fields.file.url,
-  //     heading: p.heading,
-  //     subHeading: p.subHeading,
-  //     released: p.released,
-  //     link: p.link.fields.slug
-  //   };
-  // });
+export const getServerSideProps = async () => {
 
   const res = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
-      method: 'POST', // GraphQL *always* uses POST requests!
+      method: 'POST',
       headers: {
         'content-type': 'application/json',
-        authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`, // add our access token header
+        authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
-      // send the query we wrote in GraphiQL as a string
       body: JSON.stringify({
-        // all requests start with "query: ", so we'll stringify that for convenience
         query: `
         {
+          aboutMeCollection {
+            items {
+              image {
+                url
+              }
+              heading
+              body
+            }
+          }
           previewCollection {
             items {
               image {
@@ -84,7 +53,7 @@ export const getServerSideProps = async ({ query }) => {
       }),
     },
   );
-  // grab the data from our response
+
   const { data } = await res.json();
 
   const previewEntries = await data.previewCollection.items.map((d) => {
@@ -97,9 +66,17 @@ export const getServerSideProps = async ({ query }) => {
     };
   });
 
+  const aboutMeContent = await data.aboutMeCollection.items.map((a) => {
+    return {
+      src: a.image.url,
+      heading: a.heading,
+      body: a.body
+    }
+  });
+
   return {
     props: {
-      aboutMe: about[0],
+      aboutMe: aboutMeContent[0],
       previews: previewEntries
     },
   };

@@ -4,13 +4,10 @@ import TextBanner from "../../components/TextBanner";
 import ArticleText from "../../components/ArticleText";
 import ArticleBlock from "../../components/ArticleBlock";
 import style from "../../styles/Article.module.css";
-import data from "../../data/articles.json";
-import { fetchHeader } from '../../utils/contentful';
 
-const ArticlePage = ({ data, data2 }) => {
-  const title = data.intro;
-  const body = data.body;
-  const content = data2.items[0].fields;
+const ArticlePage = ({ data }) => {
+
+  const article = data.postType1;
 
   return (
     <DefaultLayout
@@ -18,32 +15,32 @@ const ArticlePage = ({ data, data2 }) => {
       coverSlot={
         <>
           <article className={style.article}>
-            <div className={style.supHeadingText}>{content.subHeading}</div>
-            <div className={style.headingText}>{content.heading}</div>
+            <div className={style.supHeadingText}>{article.subHeading}</div>
+            <div className={style.headingText}>{article.heading}</div>
             <div className={style.subHeadingText}>
-              {`Released ${content.released}`}
+              {`Released ${article.released}`}
             </div>
           </article>
           <div className={style.subFooterWrapper}>
             <div className={style.subFooterHeadingText}>Technology</div>
-            <Pill items={content.techList.join(",")} />
+            <Pill items={article.techList.join(",")} />
           </div>
         </>
       }
     >
-      <ArticleText title="Intro" text={content.intro} />
+      <ArticleText title="Intro" text={article.intro} />
       <img
         className={style.articleImage}
         src="https://via.placeholder.com/750x548.png"
       />
       <TextBanner text="“Shared codebase across all devices on the Hybris Commerce platform." />
       <ArticleBlock>
-        {body.map((content) => {
+        {article.body.json.content.map((article) => {
           return (
             <ArticleText
-              key={content.heading}
-              title={content.heading}
-              text={content.text}
+              key={article.heading}
+              title={article.heading}
+              text={article.text}
             />
           );
         })}
@@ -57,15 +54,39 @@ const ArticlePage = ({ data, data2 }) => {
 };
 
 export const getServerSideProps = async ({ query }) => {
-  const pageText = data[query.article];
   const res = await fetch(
-    `${process.env.CONTENTFUL_URL}/spaces/${process.env.CONTENTFUL_SPACE_ID}/entries/${query}?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `
+        {
+          postType1(id: "${query.article}") {
+            heading
+            subHeading
+            released
+            techList
+            intro
+            body {
+              json
+            }
+            webLink
+          }
+        }
+        `,
+      }),
+    },
   );
-  const data2 = await res.json();
+
+  const { data } = await res.json();
+
   return {
     props: {
-      data: pageText,
-      data2,
+      data: data
     },
   };
 };

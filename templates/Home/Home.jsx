@@ -19,7 +19,7 @@ const Home = ({ previews, aboutMe }) => {
         <div className={style.galleryPreviewsWrapper}>
           {sortedPreviews.map(preview => (
             <PreviewCard
-              href={`articles/${preview.link}`}
+              href={`article/${preview.link}`}
               src={preview.src}
               heading={preview.heading}
               subHeading={preview.subHeading}
