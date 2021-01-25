@@ -1,13 +1,18 @@
 import DefaultLayout from "../../layouts/DefaultLayout";
+import Template from '../../templates/Article';
 import Pill from "../../components/Pill";
-import TextBanner from "../../components/TextBanner";
-import ArticleText from "../../components/ArticleText";
-import ArticleBlock from "../../components/ArticleBlock";
 import style from "../../styles/Article.module.css";
 
-const ArticlePage = ({ data }) => {
+const ArticlePage = ({ 
+  heading,
+  subHeading,
+  subHeadingText,
+  released,
+  techList,
+  body
+ }) => {
 
-  const article = data.postType1;
+  const document = body.json;
 
   return (
     <DefaultLayout
@@ -15,40 +20,20 @@ const ArticlePage = ({ data }) => {
       coverSlot={
         <>
           <article className={style.article}>
-            <div className={style.supHeadingText}>{article.subHeading}</div>
-            <div className={style.headingText}>{article.heading}</div>
-            <div className={style.subHeadingText}>
-              {`Released ${article.released}`}
+            <div className={style.supHeadingText}>{subHeading}</div>
+            <div className={style.headingText}>{heading}</div>
+            <div className={subHeadingText}>
+              {`Released ${released}`}
             </div>
           </article>
           <div className={style.subFooterWrapper}>
             <div className={style.subFooterHeadingText}>Technology</div>
-            <Pill items={article.techList.join(",")} />
+            <Pill items={techList.join(",")} />
           </div>
         </>
       }
     >
-      <ArticleText title="Intro" text={article.intro} />
-      <img
-        className={style.articleImage}
-        src="https://via.placeholder.com/750x548.png"
-      />
-      <TextBanner text="“Shared codebase across all devices on the Hybris Commerce platform." />
-      <ArticleBlock>
-        {article.body.json.content.map((article) => {
-          return (
-            <ArticleText
-              key={article.heading}
-              title={article.heading}
-              text={article.text}
-            />
-          );
-        })}
-      </ArticleBlock>
-      <img
-        className={style.articleImage}
-        src="https://via.placeholder.com/750x548.png"
-      />
+      <Template document={document}/>
     </DefaultLayout>
   );
 };
@@ -70,7 +55,6 @@ export const getServerSideProps = async ({ query }) => {
             subHeading
             released
             techList
-            intro
             body {
               json
             }
@@ -84,10 +68,10 @@ export const getServerSideProps = async ({ query }) => {
 
   const { data } = await res.json();
 
+  console.log(data.postType1);
+
   return {
-    props: {
-      data: data
-    },
+    props: data.postType1
   };
 };
 
