@@ -12,3 +12,22 @@
   font-size: var(--font-size-body-small);
   line-height: var(--line-height-body-small);
 }
+
+.text + .text {
+  margin-top: 1rem;
+}
+
+.quote {
+  grid-column: fm1 / fm2;
+}
+
+.quote > .text {
+  text-align: center;
+  padding: 6rem 2rem;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.image {
+  grid-column: fm1 / fm2;
+}

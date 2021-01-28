@@ -4,48 +4,66 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import TextBanner from "../../components/TextBanner";
 import ArticleText from "../../components/ArticleText";
 import ArticleBlock from "../../components/ArticleBlock";
+import CoverSlot from '../../components/CoverSlot';
+import Pill from '../../components/Pill';
 import style from './Article.module.css';
 
 const Article = ({
-  document
+  heading,
+  subHeading,
+  subHeadingText,
+  released,
+  techList,
+  body
 }) => {
+  const {json, links} = body;
   const options = {
     renderNode: {
       [BLOCKS.HEADING_2]: (node, children) => (
-        <p className={style.heading}>{children}</p>
+        <h2 className={style.heading}>{children}</h2>
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className={style.text}>{children}</p>
       ),
+      [BLOCKS.QUOTE]: (node, children) => (
+          <div className={style.quote}>{children}</div>
+      ),
+      [BLOCKS.EMBEDDED_ASSET]: ({data}) => {
+        const linkArray = links.assets.block.flatMap((obj) => {
+          return obj.url;
+        })
+        let src = '';
+        linkArray.forEach((link) => {
+          if (link.includes(data.target.sys.id)) {
+            src = link;
+          }
+        })
+        return (
+          <img src={src} className={style.image}/>
+        )},
     },
   };
+
   return (
-    <div className="grid">
-      {documentToReactComponents(document, options)}
-    </div>
+    <>
+      <CoverSlot>
+        <article className={style.article}>
+          <div className={style.supHeadingText}>{subHeading}</div>
+          <div className={style.headingText}>{heading}</div>
+          <div className={subHeadingText}>
+            {`Released ${released}`}
+          </div>
+        </article>
+        <div className={style.subFooterWrapper}>
+          <div className={style.subFooterHeadingText}>Technology</div>
+          <Pill items={techList.join(",")} />
+        </div>
+      </CoverSlot>
+      <div className="grid">
+        {documentToReactComponents(json, options)}
+      </div>
+    </>
   )
 }
 
 export default Article;
-
-      {/* <ArticleText title="Intro" text={article.intro} />
-      <img
-        className={style.articleImage}
-        src="https://via.placeholder.com/750x548.png"
-      />
-      <TextBanner text="“Shared codebase across all devices on the Hybris Commerce platform." />
-      <ArticleBlock>
-        {article.body.json.content.map((article) => {
-          return (
-            <ArticleText
-              key={article.heading}
-              title={article.heading}
-              text={article.text}
-            />
-          );
-        })}
-      </ArticleBlock>
-      <img
-        className={style.articleImage}
-        src="https://via.placeholder.com/750x548.png"
-      /> */}
