@@ -1,5 +1,6 @@
 :root {
   --header-height: 7rem;
+  --spacing-0: 3rem;
   --spacing-1: 6rem;
   --spacing-2: 12rem;
   --vertical-spacing: var(--spacing-1);
@@ -9,4 +10,8 @@
   :root {
     --vertical-spacing: var(--spacing-2);
   }
+}
+
+p:empty {
+  display: none;
 }

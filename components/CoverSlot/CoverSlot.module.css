@@ -8,11 +8,3 @@
   align-self: center;
   padding-bottom: var(--header-height);
 }
-
-.salutationText {
-  font-family: "Noto", Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: var(--font-size-display);
-  line-height: var(--line-height-display);
-  margin-bottom: 0.5rem;
-}

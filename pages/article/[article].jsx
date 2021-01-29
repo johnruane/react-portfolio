@@ -25,6 +25,7 @@ export const getServerSideProps = async ({ query }) => {
           postType1(id: "${query.article}") {
             heading
             subHeading
+            slug
             released
             techList
             body {

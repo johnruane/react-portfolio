@@ -2,32 +2,83 @@
   margin: var(--spacing-2) 0;
 }
 
-.heading {
+.heading2 {
   grid-column: m1-end / m2-start;
-  margin-bottom: 1rem;
+  margin: var(--spacing-1) 0 1rem;
 }
 
 .text {
   grid-column: g1 / m2-start;
   font-size: var(--font-size-body-small);
   line-height: var(--line-height-body-small);
+  margin-bottom: 1rem;
 }
 
-.text + .text {
-  margin-top: 1rem;
+.text + .heading2 {
+  margin-top: var(--spacing-0);
 }
 
 .quote {
   grid-column: fm1 / fm2;
+  font-weight: bold;
 }
 
 .quote > .text {
   text-align: center;
-  padding: 6rem 2rem;
+  padding: var(--spacing-1);
+  margin: 0;
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
 }
 
 .image {
   grid-column: fm1 / fm2;
+  margin-top: var(--spacing-1);
+}
+
+.quote + .image {
+  margin-top: 0;
+}
+
+.simplybeIntl .quote .text {
+  background-color: var(--sbi-banner-color-1);
+  color: var(--color-white);
+}
+
+/* If anyone is reading this, im so sorry. 
+  Contentful/Rich Text Block/CSS Modules do not play well together 
+*/
+.simplybeIntl .text + .heading2 + .text + .text + .image + .quote > .text {
+  background-color: var(--sbi-banner-color-2);
+  color: var(--color-black);
+}
+
+.simplybe .quote .text {
+  background-color: var(--dal-banner-color-1);
+  color: var(--color-white);
+}
+
+.simplybe .text + .heading2 + .text + .text + .image + .quote > .text {
+  background-color: var(--dal-banner-color-2);
+  color: var(--color-black);
+}
+
+.jacamo .quote .text {
+  background-color: var(--cgn-banner-color-1);
+  color: var(--color-white);
+}
+
+.jacamo .text + .heading2 + .text + .text + .image + .quote > .text {
+  background-color: var(--cgn-banner-color-2);
+  color: var(--color-black);
+}
+
+.jdwilliams .quote .text {
+  background-color: var(--cgn-banner-color-1);
+  color: var(--color-white);
+}
+
+.jdwilliams .text + .heading2 + .text + .text + .image + .quote > .text {
+  background-color: var(--cgn-banner-color-2);
+  color: var(--color-black);
 }
