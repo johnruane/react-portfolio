@@ -1,5 +1,43 @@
-.article {
-  margin: var(--spacing-2) 0;
+.coverSlotContent {
+  height: calc(100vh - var(--header-height));
+  background-color: var(--background-color-1);
+}
+
+.coverSlot {
+  grid-column: m1-end / m2-start;
+  align-self: center;
+  display: grid;
+  grid-template-rows: auto 100%;
+  margin-top: calc(-1 * var(--header-height));
+}
+
+.supHeadingText {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.headingText {
+  font-size: var(--font-size-display-small);
+  line-height: var(--line-height-display-small);
+  font-weight: bold;
+}
+
+.subHeadingText {
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+}
+
+.subFooterWrapper {
+  grid-row: 3;
+  align-self: flex-end;
+  margin-bottom: 2rem;
+}
+
+.subFooterHeadingText {
+  text-transform: uppercase;
+  font-size: var(--font-size-print);
+  line-height: var(--line-height-print);
+  margin-bottom: 0.5rem;
 }
 
 .heading2 {
@@ -45,10 +83,7 @@
   color: var(--color-white);
 }
 
-/* If anyone is reading this, im so sorry. 
-  Contentful/Rich Text Block/CSS Modules do not play well together 
-*/
-.simplybeIntl .text + .heading2 + .text + .text + .image + .quote > .text {
+.simplybeIntl > img:last-of-type + .quote > .text {
   background-color: var(--sbi-banner-color-2);
   color: var(--color-black);
 }
@@ -58,7 +93,7 @@
   color: var(--color-white);
 }
 
-.simplybe .text + .heading2 + .text + .text + .image + .quote > .text {
+.simplybe > img:last-of-type + .quote > .text {
   background-color: var(--dal-banner-color-2);
   color: var(--color-black);
 }
@@ -68,7 +103,7 @@
   color: var(--color-white);
 }
 
-.jacamo .text + .heading2 + .text + .text + .image + .quote > .text {
+.jacamo > img:last-of-type + .quote > .text {
   background-color: var(--cgn-banner-color-2);
   color: var(--color-black);
 }
@@ -78,7 +113,7 @@
   color: var(--color-white);
 }
 
-.jdwilliams .text + .heading2 + .text + .text + .image + .quote > .text {
+.jdwilliams > img:last-of-type + .quote > .text {
   background-color: var(--cgn-banner-color-2);
   color: var(--color-black);
 }

@@ -12,14 +12,16 @@ const Home = ({ previews, aboutMe }) => {
 
   return (
     <div>
-      <CoverSlot>
-        <article className={style.salutationWrapper}>
-            <div className={style.salutationText}>Hello,</div>
-            <div className={style.salutationSubText}>
-              I'm a frontend developer from Manchester.
-            </div>
-        </article>
-      </CoverSlot>
+      <div className={`grid ${style.coverSlotContent}`}>
+        <div className={style.coverSlot}>
+          <article className={style.salutationWrapper}>
+              <div className={style.salutationText}>Hello,</div>
+              <div className={style.salutationSubText}>
+                I'm a frontend developer from Manchester.
+              </div>
+          </article>
+        </div>
+      </div>
       <article className={`grid ${style.galleryContent}`}>
         <h2 className={style.galleryHeading}>It's a work thing</h2>
         <h3 className={style.gallerySubHeading}>Case studies</h3>

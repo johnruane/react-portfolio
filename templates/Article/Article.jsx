@@ -67,19 +67,21 @@ const Article = ({
 
   return (
     <>
-      <CoverSlot>
-        <article className={style.article}>
-          <div className={style.supHeadingText}>{subHeading}</div>
-          <div className={style.headingText}>{heading}</div>
-          <div className={style.subHeadingText}>
-            {`Released ${released}`}
+      <div className={`grid ${style.coverSlotContent}`}>
+        <div className={style.coverSlot}>
+          <article className={style.article}>
+            <div className={style.supHeadingText}>{subHeading}</div>
+            <div className={style.headingText}>{heading}</div>
+            <div className={style.subHeadingText}>
+              {`Released ${released}`}
+            </div>
+          </article>
+          <div className={style.subFooterWrapper}>
+            <div className={style.subFooterHeadingText}>Technology</div>
+            <Pill items={techList.join(",")} />
           </div>
-        </article>
-        <div className={style.subFooterWrapper}>
-          <div className={style.subFooterHeadingText}>Technology</div>
-          <Pill items={techList.join(",")} />
         </div>
-      </CoverSlot>
+      </div>
       <div className={`grid ${articleClass}`}>
         {documentToReactComponents(json, options)}
       </div>
