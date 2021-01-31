@@ -13,14 +13,14 @@
   --sbi-banner-color-2: #ffe4e4;
 
   /* simplybe */
-  --dal-banner-color-1: #efe496;
-  --dal-banner-color-2: #dedde2;
+  --dal-banner-color-1: #212121;
+  --dal-banner-color-2: #f2efda;
 
   /* jacamo */
-  --cgn-banner-color-1: #bcd8aa;
-  --cgn-banner-color-2: #e1dde9;
+  --cgn-banner-color-1: #212121;
+  --cgn-banner-color-2: #e4f2da;
 
   /* jdwilliams */
-  --jdw-banner-color-1: #eaeaea;
-  --jdw-banner-color-2: #d2e3ea;
+  --jdw-banner-color-1: #212121;
+  --jdw-banner-color-2: #e6eef2;
 }

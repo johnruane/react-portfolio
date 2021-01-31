@@ -66,6 +66,7 @@
   padding: var(--spacing-1);
   margin: 0;
   font-size: var(--font-size-body);
+  font-weight: bold;
   line-height: var(--line-height-body);
 }
 
@@ -109,11 +110,11 @@
 }
 
 .jdwilliams .quote .text {
-  background-color: var(--cgn-banner-color-1);
+  background-color: var(--jdw-banner-color-1);
   color: var(--color-white);
 }
 
 .jdwilliams > img:last-of-type + .quote > .text {
-  background-color: var(--cgn-banner-color-2);
+  background-color: var(--jdw-banner-color-2);
   color: var(--color-black);
 }
