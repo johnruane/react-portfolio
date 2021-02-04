@@ -10,7 +10,7 @@
   --line-height-body: 1.5rem; /* 24px */
   --line-height-body-large: 2.25rem; /* 36px */
   --line-height-display-small: 3.375rem; /* 54px */
-  --line-height-display: 4.5rem; /* 72px */
+  --line-height-display: 4rem; /* 64px */
 
   /* custom typography */
   --font-size-article-heading: var(--font-size-body-large);

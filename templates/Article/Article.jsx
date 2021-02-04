@@ -1,17 +1,12 @@
 import React from 'react';
 import { BLOCKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import TextBanner from "../../components/TextBanner";
-import ArticleText from "../../components/ArticleText";
-import ArticleBlock from "../../components/ArticleBlock";
-import CoverSlot from '../../components/CoverSlot';
 import Pill from '../../components/Pill';
 import style from './Article.module.css';
 
 const Article = ({
   heading,
   subHeading,
-  subHeadingText,
   released,
   techList,
   body,
@@ -62,8 +57,6 @@ const Article = ({
       articleClass = style.jdwilliams;
       break;
   }
-
-  console.log(released);
 
   return (
     <>

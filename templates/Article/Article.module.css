@@ -7,8 +7,8 @@
   grid-column: m1-end / m2-start;
   align-self: center;
   display: grid;
-  grid-template-rows: auto 100%;
-  margin-top: calc(-1 * var(--header-height));
+  grid-template-rows: auto calc(100vh - var(--header-height) - 98px);
+  /* margin-top: calc(-1 * var(--header-height)); */
 }
 
 .supHeadingText {
@@ -28,7 +28,7 @@
 }
 
 .subFooterWrapper {
-  grid-row: 3;
+  grid-row: 2;
   align-self: flex-end;
   margin-bottom: 2rem;
 }
@@ -63,11 +63,17 @@
 
 .quote > .text {
   text-align: center;
-  padding: var(--spacing-1);
+  padding: var(--spacing-0) 2rem;
   margin: 0;
-  font-size: var(--font-size-body);
   font-weight: bold;
+  font-size: var(--font-size-body);
   line-height: var(--line-height-body);
+}
+
+@media (min-width: 768px) {
+  .quote > .text {
+    padding: var(--spacing-1);
+  }
 }
 
 .image {

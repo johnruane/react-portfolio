@@ -15,3 +15,10 @@
   line-height: var(--line-height-print);
   color: var(--font-color-2);
 }
+
+@media (min-width: 768px) {
+  .pill {
+    font-size: var(--font-size-body-small);
+    line-height: var(--line-height-body-small);
+  }
+}

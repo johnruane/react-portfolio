@@ -1,4 +1,3 @@
-import CoverSlot from '../../components/CoverSlot';
 import PreviewCard from '../../components/PreviewCard';
 import style from './Home.module.css';
 import { convertContentfulString } from '../../utils/stringUtils';
@@ -8,7 +7,7 @@ const Home = ({ previews, aboutMe }) => {
     return parseInt(b.released) - parseInt(a.released);
   });
 
-  console.log(sortedPreviews);
+  const bodyText = convertContentfulString(aboutMe.body);
 
   return (
     <div>
@@ -28,6 +27,7 @@ const Home = ({ previews, aboutMe }) => {
         <div className={style.galleryPreviewsWrapper}>
           {sortedPreviews.map(preview => (
             <PreviewCard
+              key={preview.link}
               href={`article/${preview.link}`}
               src={preview.src}
               heading={preview.heading}
@@ -44,7 +44,7 @@ const Home = ({ previews, aboutMe }) => {
         </div>
         <h2 className={style.aboutHeading}>{aboutMe.heading}</h2>
         <div className={style.aboutText}>
-            {convertContentfulString(aboutMe.body)}
+            {bodyText}
         </div>
       </article>
     </div>

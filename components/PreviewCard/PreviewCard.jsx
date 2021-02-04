@@ -11,14 +11,16 @@ const PreviewCard = ({
 }) => {
   return (
     <Link href={href}> 
-      <article className={style.galleryPreview}> 
-          <img className={style.galleryPreviewImage} src={src} />
-          <div className={style.textWrapper}>
-            <div className={style.heading}>{heading}</div>
-            <div className={style.subHeading}>{subHeading}</div>
-          </div>
-          <div className={style.text}>{text}</div>
-      </article>
+      <a>
+        <article className={style.galleryPreview}> 
+            <img className={style.galleryPreviewImage} src={src} />
+            <div className={style.textWrapper}>
+              <div className={style.heading}>{heading}</div>
+              <div className={style.subHeading}>{subHeading}</div>
+            </div>
+            <div className={style.text}>{text}</div>
+        </article>
+      </a>
     </Link>
   )
 }
