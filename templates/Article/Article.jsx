@@ -16,7 +16,7 @@ const Article = ({
   const options = {
     renderNode: {
       [BLOCKS.HEADING_2]: (node, children) => (
-        <h2 className={style.heading2}>{children}</h2>
+        <h2 className={style.heading}>{children}</h2>
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className={style.text}>{children}</p>

@@ -1,5 +1,7 @@
 .header {
   background-color: var(--background-color-1);
+  position: absolute;
+  width: 100%;
 }
 
 .headerText {
