@@ -1,6 +1,11 @@
 .pillWrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+
+.pillWrapper > :first-child {
+  margin-left: 2rem;
 }
 
 .pillWrapper :last-child {
@@ -9,11 +14,13 @@
 
 .pill {
   background: var(--pill-background-color);
+  border-radius: 12px;
   margin: 0 0.5rem 0.5rem 0;
-  padding: 0 0.5rem;
-  font-size: var(--font-size-print);
-  line-height: var(--line-height-print);
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
   color: var(--font-color-2);
+  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
