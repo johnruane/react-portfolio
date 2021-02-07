@@ -1,11 +1,19 @@
 .pillWrapper {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
+  flex-wrap: wrap;
 }
 
-.pillWrapper > :first-child {
-  margin-left: 2rem;
+@media (max-width: 1023px) {
+  .pillWrapper {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: 1023px) {
+  .pillWrapper > :first-child {
+    margin-left: 2rem;
+  }
 }
 
 .pillWrapper :last-child {
@@ -21,6 +29,7 @@
   line-height: var(--line-height-body-small);
   color: var(--font-color-2);
   white-space: nowrap;
+  user-select: none;
 }
 
 @media (min-width: 768px) {
