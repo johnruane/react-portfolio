@@ -4,15 +4,13 @@
 }
 
 @media (max-width: 1023px) {
+  .pillWrapper > :first-child {
+    margin-left: 2rem;
+  }
+
   .pillWrapper {
     flex-wrap: nowrap;
     overflow-x: scroll;
-  }
-}
-
-@media (max-width: 1023px) {
-  .pillWrapper > :first-child {
-    margin-left: 2rem;
   }
 }
 

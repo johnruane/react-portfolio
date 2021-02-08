@@ -40,6 +40,13 @@
   font-weight: bold;
 }
 
+@media (min-width: 768px) {
+  .headingText {
+    font-size: var(--font-size-display);
+    line-height: var(--line-height-display);
+  }
+}
+
 .subHeadingText {
   font-size: var(--font-size-body-small);
   line-height: var(--line-height-body-small);

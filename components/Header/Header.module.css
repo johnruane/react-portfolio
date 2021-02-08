@@ -10,8 +10,7 @@
   padding: 3rem 0 3rem;
   width: 100%;
   text-align: end;
-}
-
-.headerTextEmphasis {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   font-weight: bold;
 }

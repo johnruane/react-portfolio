@@ -21,7 +21,20 @@
   font-weight: bold;
   font-size: var(--font-size-display);
   line-height: var(--line-height-display);
-  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .salutationText {
+    font-size: var(--font-size-jumbo);
+    line-height: var(--line-height-jumbo);
+  }
+}
+
+@media (min-width: 1024px) {
+  .salutationSubText {
+    font-size: var(--font-size-body-large);
+    line-height: var(--line-height-body-large);
+  }
 }
 
 .galleryContent {

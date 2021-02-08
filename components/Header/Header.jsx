@@ -1,12 +1,14 @@
 import React from 'react';
+import Link from 'next/link'
 import style from './Header.module.css';
 
 const Header = () => {
   return (
     <header className={`grid ${style.header}`}>
-      <div className={style.headerText}>
-        <span className={style.headerTextEmphasis}>JOHN</span>ruane
-      </div>
+      <Link href="/">
+        <a className={style.headerText}>JOHNRUANE
+        </a>
+      </Link>
     </header>
   )
 }
